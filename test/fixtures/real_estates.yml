@@ -1,23 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  address: MyString
-  loan_term: 1
-  purchase_price: 1
-  repair_budget: 1
-  arv: 1
-  first_name: MyString
-  last_name: MyString
-  phone_number: MyString
-  email: MyString
+  address: 103 Menton St, Gordon, Georgia, 31031
+  loan_term: 11
+  purchase_price: 860000
+  repair_budget: 200000
+  arv: 1500000
+  first_name: Jonh
+  last_name: Connor
+  phone_number: 2248098619
+  email: jonh@example.com
 
 two:
-  address: MyString
-  loan_term: 1
-  purchase_price: 1
-  repair_budget: 1
-  arv: 1
-  first_name: MyString
-  last_name: MyString
-  phone_number: MyString
-  email: MyString
+  address: 42 Elm Street
+  loan_term: 5
+  purchase_price: 500000
+  repair_budget: 100000
+  arv: 800000
+  first_name: Jane
+  last_name: Doe
+  phone_number: 5551234567
+  email: jane.doe@example.com
