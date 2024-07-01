@@ -22,6 +22,7 @@ class RealEstatesController < ApplicationController
   # POST /real_estates or /real_estates.json
   def create
     @real_estate = RealEstate.new(real_estate_params)
+    @real_estate.profit = @real_estate.calculate_estimated_profit
 
     respond_to do |format|
       if @real_estate.save
