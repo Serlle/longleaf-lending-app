@@ -2,10 +2,10 @@
 
 one:
   address: 103 Menton St, Gordon, Georgia, 31031
-  loan_term: 11
-  purchase_price: 860000
-  repair_budget: 200000
-  arv: 1500000
+  loan_term: 12
+  purchase_price: 100000
+  repair_budget: 20000
+  arv: 150000
   first_name: Jonh
   last_name: Connor
   phone_number: 2248098619

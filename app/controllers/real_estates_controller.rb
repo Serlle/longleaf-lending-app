@@ -26,7 +26,7 @@ class RealEstatesController < ApplicationController
 
     respond_to do |format|
       if @real_estate.save
-        format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate was successfully created." }
+        format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate profit and return calculator was successfully created." }
         format.json { render :show, status: :created, location: @real_estate }
       else
         format.html { render :new, status: :unprocessable_entity }

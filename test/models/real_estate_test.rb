@@ -74,4 +74,11 @@ class RealEstateTest < ActiveSupport::TestCase
     assert @real_estate.valid?
     assert @real_estate.valid?
   end
+
+  test "should profit caluculate of real estate" do
+    real_estate = real_estates(:one)
+    profit = real_estate.calculate_estimated_profit
+
+    assert_in_delta 47577.077, profit, 0.01
+  end
 end

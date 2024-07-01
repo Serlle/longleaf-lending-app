@@ -16,7 +16,6 @@ class RealEstatesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create real_estate" do
-
     assert_difference("RealEstate.count") do
       post real_estates_url, params: {
         real_estate: {
@@ -38,6 +37,13 @@ class RealEstatesControllerTest < ActionDispatch::IntegrationTest
   test "should show real_estate" do
     get real_estate_url(@real_estate)
     assert_response :success
+  end
+
+  test "should show real_estate with profit data" do
+    get real_estate_url(@real_estate)
+    assert_response :success
+
+    assert_select 'p strong', 'PROFIT:'
   end
 
   test "should get edit" do
