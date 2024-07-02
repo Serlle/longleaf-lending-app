@@ -19,14 +19,16 @@ class RealEstate < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX }
 
   def calculate_estimated_profit
-    max_loan_by_purchase_price = 0.9 * purchase_price
-    max_loan_by_arv = 0.7 * arv
-    loan_amount = [max_loan_by_purchase_price, max_loan_by_arv].min
-
-    monthly_interest_rate = 0.13 / 12
-    total_interest_expense = loan_amount * ((1 + monthly_interest_rate)**loan_term - 1)
-
-    #we return profit result
-    arv - loan_amount - total_interest_expense
+    if purchase_price.present? and arv.present?
+      max_loan_by_purchase_price = 0.9 * purchase_price
+      max_loan_by_arv = 0.7 * arv
+      loan_amount = [max_loan_by_purchase_price, max_loan_by_arv].min
+  
+      monthly_interest_rate = 0.13 / 12
+      total_interest_expense = loan_amount * ((1 + monthly_interest_rate)**loan_term - 1)
+  
+      #we return profit result
+      arv - loan_amount - total_interest_expense
+    end
   end
 end
