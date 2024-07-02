@@ -22,6 +22,7 @@ class RealEstatesController < ApplicationController
   # POST /real_estates or /real_estates.json
   def create
     @real_estate = RealEstate.new(real_estate_params)
+    @real_estate.loan_amount = @real_estate.calculate_loan_amount
     @real_estate.profit = @real_estate.calculate_estimated_profit
 
     respond_to do |format|
@@ -39,6 +40,7 @@ class RealEstatesController < ApplicationController
   def update
     respond_to do |format|
       if @real_estate.update(real_estate_params)
+        @real_estate.loan_amount = @real_estate.calculate_loan_amount
         @real_estate.profit = @real_estate.calculate_estimated_profit
         @real_estate.save
         format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate profit was successfully updated." }

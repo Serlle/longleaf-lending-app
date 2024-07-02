@@ -75,10 +75,17 @@ class RealEstateTest < ActiveSupport::TestCase
     assert @real_estate.valid?
   end
 
-  test "should profit caluculate of real estate" do
+  test "should profit calculation of real estate" do
     real_estate = real_estates(:one)
     profit = real_estate.calculate_estimated_profit
 
     assert_in_delta 47577.077, profit, 0.01
+  end
+
+  test "should loan amount calculation of real estate" do
+    real_estate = real_estates(:one) #Whit 100,000 on Purchase price - you can see the data in test/fixtures/real_estates.yml
+    loan_amount = real_estate.calculate_loan_amount
+
+    assert_in_delta 90000, loan_amount, 0.01
   end
 end

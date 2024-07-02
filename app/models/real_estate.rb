@@ -31,4 +31,9 @@ class RealEstate < ApplicationRecord
       arv - loan_amount - total_interest_expense
     end
   end
+
+  def calculate_loan_amount
+    #we return loan amount result
+    0.9 * purchase_price if purchase_price.present? 
+  end
 end

@@ -39,11 +39,12 @@ class RealEstatesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should show real_estate with profit data" do
+  test "should show real_estate with profit data and loan amount" do
     get real_estate_url(@real_estate)
     assert_response :success
 
     assert_select 'p strong', 'PROFIT:'
+    assert_select 'p strong', 'LOAN AMOUNT:'
   end
 
   test "should get edit" do
@@ -51,9 +52,10 @@ class RealEstatesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     assert_select 'div label', 'Profit'
+    assert_select 'div label', 'Loan amount'
   end
 
-  test "should update real_estate with profit" do
+  test "should update real_estate with profit and purchase_price different" do
     patch real_estate_url(@real_estate), params: { 
       real_estate: { 
         address: @real_estate.address, 
@@ -63,15 +65,17 @@ class RealEstatesControllerTest < ActionDispatch::IntegrationTest
         last_name: @real_estate.last_name, 
         loan_term: 6, 
         phone_number: @real_estate.phone_number, 
-        purchase_price: @real_estate.purchase_price, 
+        purchase_price: 200000, 
         repair_budget: @real_estate.repair_budget 
       }
     }
 
     @real_estate.reload
+    @real_estate.loan_amount = @real_estate.calculate_loan_amount
     @real_estate.profit = @real_estate.calculate_estimated_profit
 
-    assert_in_delta 53989.255, @real_estate.profit, 0.01
+    assert_in_delta 180000, @real_estate.loan_amount, 0.01
+    assert_in_delta 37987.464, @real_estate.profit, 0.01
     assert_redirected_to real_estate_url(@real_estate)
   end
 
