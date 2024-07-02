@@ -7,6 +7,10 @@ h1 {
   text-align: center;
 }
 
+h2, h3 {
+  color: #2c3e50;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -21,17 +25,8 @@ th, td {
   text-align: left;
 }
 
-.container {
-  width: 100%;
-  margin: 20px 0;
-}
-
-h2, h3 {
-  color: #2c3e50;
-}
-
 p, li {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.6;
 }
 

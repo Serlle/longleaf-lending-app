@@ -21,3 +21,16 @@ two:
   last_name: Doe
   phone_number: 5551234567
   email: jane.doe@example.com
+
+complete_information:
+  address: 103 Menton St, Gordon, Georgia, 31031'
+  loan_term: 12
+  purchase_price: 100000
+  repair_budget: 20000
+  arv: 150000
+  first_name: John
+  last_name: Connor
+  phone_number: 2248098619
+  email: john@example.com
+  loan_amount: 70000
+  profit: 15000

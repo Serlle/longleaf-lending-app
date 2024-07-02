@@ -12,7 +12,8 @@ class RealEstatesController < ApplicationController
       format.html
       format.pdf do
         # I included a corresponding view template
-        render pdf: "Termsheet - #{@real_estate.first_name + @real_estate.last_name}", template: 'real_estates/termsheet'
+        render pdf: "Termsheet - #{@real_estate.first_name + @real_estate.last_name}", 
+               template: 'real_estates/termsheet'
       end
     end
   end
@@ -34,6 +35,8 @@ class RealEstatesController < ApplicationController
 
     respond_to do |format|
       if @real_estate.save
+        # Send the email
+        RealEstateMailer.with(real_estate: @real_estate).send_termsheet.deliver_now
         format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate profit and return calculator was successfully created." }
         format.json { render :show, status: :created, location: @real_estate }
       else

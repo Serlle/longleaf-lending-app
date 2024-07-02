@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Real Estate Termsheet</h1>
+    <p>Dear <%= @real_estate.first_name %> <%= @real_estate.last_name %>,</p>
+    <p>Please find attached the termsheet for your property at <strong><%= @real_estate.address %></strong>.</p>
+    <p>Thank you for choosing our service.</p>
+    <p>Sincerely,</p>
+    <p>The Longleaf Lending Team</p>
+  </body>
+</html>
