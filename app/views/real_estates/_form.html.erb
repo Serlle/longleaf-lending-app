@@ -53,7 +53,12 @@
 
   <div class="my-5">
     <%= form.label :email %>
-    <%= form.text_field :email, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :email, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", placeholder: "you@example.com" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :profit %>
+    <%= form.text_field :profit, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", style: "background:lightgrey", readonly: true %>
   </div>
 
   <div class="inline">

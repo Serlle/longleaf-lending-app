@@ -39,7 +39,9 @@ class RealEstatesController < ApplicationController
   def update
     respond_to do |format|
       if @real_estate.update(real_estate_params)
-        format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate was successfully updated." }
+        @real_estate.profit = @real_estate.calculate_estimated_profit
+        @real_estate.save
+        format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate profit was successfully updated." }
         format.json { render :show, status: :ok, location: @real_estate }
       else
         format.html { render :edit, status: :unprocessable_entity }
