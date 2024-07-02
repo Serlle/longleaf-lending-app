@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Termsheet PDF</title>
+    <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Termsheet</h1>
+      <h2>Data</h2>
+      <p><strong>Address:</strong> <%= @real_estate.address %></p>
+      <p><strong>Loan Term:</strong> <%= @real_estate.loan_term %> months</p>
+      <p><strong>Purchase Price:</strong> <%= number_to_currency(@real_estate.purchase_price) %></p>
+      <p><strong>Repair Budget:</strong> <%= number_to_currency(@real_estate.repair_budget) %></p>
+      <p><strong>After Repair Value (ARV):</strong> <%= number_to_currency(@real_estate.arv) %></p>
+      <p><strong>Estimated Profit:</strong> <%= number_to_currency(@real_estate.profit) %></p>
+      <p><strong>Estimated Loan Amount:</strong> <%= number_to_currency(@real_estate.loan_amount) %></p>
+    </div>
+
+    <div class="container">
+      <h2>What does Longleaf Lending do?</h2>
+      <p>We originate and service hard money loans from high-quality borrowers. These loans have several features favored by investors:</p>
+      <ul class="feature-list">
+        <li><strong>Short duration:</strong> our average loan is paid off within 6 months.</li>
+        <li><strong>High Yield:</strong> 9-11% rates offered to investors.</li>
+        <li><strong>Real-Estate Backed:</strong> secured by first lien notes on residential real estate.</li>
+        <li><strong>Low LTVs:</strong> our loans feature &lt;70% LTVs.</li>
+        <li><strong>Diversification:</strong> invest in multiple deals to create a personal loan portfolio.</li>
+        <li><strong>Tax-Advantaged:</strong> private lending is an ideal asset class for self-directed or solo 401K/IRA accounts.</li>
+      </ul>
+
+      <h2>How does it work?</h2>
+      <p>At Longleaf Lending, we specialize in originating and funding first lien real estate loans, followed by offering unique investment opportunities in individual notes.</p>
+      <p>Enjoy a steady income stream. As we collect interest from borrowers, you receive monthly payments. Once a project concludes with a sale or refinance, your principal is returned, ready for reinvestment.</p>
+
+      <h3>What you can expect:</h3>
+      <ul class="feature-list">
+        <li><strong>High yield rates:</strong> We offer 9-11% APRs.</li>
+        <li><strong>Direct lender:</strong> We handle all loan origination and servicing in-house, ensuring quality and consistency.</li>
+        <li><strong>Texas specialist:</strong> Leverage our extensive local knowledge and experience in the Texas real estate market.</li>
+        <li><strong>Short-term:</strong> Our loans typically reach maturity within 6 months, ideal for short-term investment strategies.</li>
+        <li><strong>Lender friendly:</strong> Texas is a non-judicial state, simplifying the lending process.</li>
+        <li><strong>Low LTVs:</strong> With LTVs up to 70%, our loans are secured by real estate, balancing reward and risk.</li>
+      </ul>
+    </div>
+
+  </body>
+</html>

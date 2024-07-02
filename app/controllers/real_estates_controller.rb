@@ -8,6 +8,13 @@ class RealEstatesController < ApplicationController
 
   # GET /real_estates/1 or /real_estates/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        # I included a corresponding view template
+        render pdf: "Termsheet - #{@real_estate.first_name + @real_estate.last_name}", template: 'real_estates/termsheet'
+      end
+    end
   end
 
   # GET /real_estates/new
