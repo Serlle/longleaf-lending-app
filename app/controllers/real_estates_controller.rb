@@ -35,8 +35,9 @@ class RealEstatesController < ApplicationController
 
     respond_to do |format|
       if @real_estate.save
-        # Send the email
-        RealEstateMailer.with(real_estate: @real_estate).send_termsheet.deliver_now
+        # Send the email with Sidekiq
+        SendTermsheetJob.perform_later(@real_estate)
+
         format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate profit and return calculator was successfully created." }
         format.json { render :show, status: :created, location: @real_estate }
       else

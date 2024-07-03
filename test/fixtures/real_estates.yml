@@ -23,7 +23,7 @@ two:
   email: jane.doe@example.com
 
 complete_information:
-  address: 103 Menton St, Gordon, Georgia, 31031'
+  address: 103 Menton St, Gordon, Georgia, 31031
   loan_term: 12
   purchase_price: 100000
   repair_budget: 20000
