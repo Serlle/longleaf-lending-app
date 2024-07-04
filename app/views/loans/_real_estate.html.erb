@@ -1,0 +1,7 @@
+<% if @real_estate %>
+  <div id="real_estate" class="bg-green-200 rounded p-2">
+    <%= render 'real_estates/form', real_estate: @real_estate %>
+  </div>
+<% else %>
+  <div id="real_estate"></div>
+<% end %>
