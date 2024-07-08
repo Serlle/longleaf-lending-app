@@ -1,0 +1,27 @@
+<fieldset data-form-navigation-target="section" data-type="PersonalInformation" class="section hidden">
+  <div class="my-5">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: "input-field" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: "input-field" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "input-field", placeholder: "you@example.com" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, class: "input-field" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit "Calculate Profits and Returns", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+
+  <button type="button" data-action="click->form-navigation#back" class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">Back</button>
+</fieldset>

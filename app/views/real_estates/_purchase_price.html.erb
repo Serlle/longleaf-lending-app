@@ -1,0 +1,9 @@
+<fieldset data-form-navigation-target="section" data-type="PurchasePrice" class="section hidden">
+  <div class="my-5">
+    <%= form.label :purchase_price %>
+    <%= form.number_field :purchase_price, class: "input-field" %>
+  </div>
+
+  <button type="button" data-action="click->form-navigation#back">Back</button>
+  <button type="button" data-action="click->form-navigation#next">Next</button>
+</fieldset>

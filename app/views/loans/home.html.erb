@@ -3,7 +3,7 @@
   <p>Find me in app/views/loans/home.html.erb</p>
 
   <h2 class="font-bold">Real Estate Profit and Return Calculator</h2>
-
+  <%= render 'loans/notice' %>
   <!-- Render the real_estate partial and pass the @real_estate instance variable as a local variable -->
   <%= render partial: 'loans/real_estate', locals: { real_estate: @real_estate } %>
 </div>

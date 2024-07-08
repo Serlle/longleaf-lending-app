@@ -1,0 +1,7 @@
+<%= turbo_stream.replace 'notice' do %>
+  <%= render partial: 'loans/notice', locals: { notice: @notice }%>
+<% end %>
+
+<%= turbo_stream.replace 'error_explanation' do %>
+  <%= render partial: 'real_estates/error_explanation', locals: { real_estate: @real_estate }%>
+<% end %>

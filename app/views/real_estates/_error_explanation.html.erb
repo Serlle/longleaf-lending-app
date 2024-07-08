@@ -1,0 +1,13 @@
+<% if real_estate.errors.any? %>
+  <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <h2><%= pluralize(real_estate.errors.count, "error") %> prohibited this real_estate from being saved:</h2>
+
+    <ul>
+      <% real_estate.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div id="error_explanation"></div>
+<% end %>

@@ -1,0 +1,9 @@
+<fieldset data-form-navigation-target="section" data-type="LoanTerms" class="section hidden">
+  <div class="my-5">
+    <%= form.label :loan_term %>
+    <%= form.number_field :loan_term, class: "input-field" %>
+  </div>
+
+  <button type="button" data-action="click->form-navigation#back">Back</button>
+  <button type="button" data-action="click->form-navigation#next">Next</button>
+</fieldset>
