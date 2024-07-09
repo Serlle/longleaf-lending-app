@@ -1,27 +1,34 @@
-<fieldset data-form-navigation-target="section" data-type="PersonalInformation" class="section hidden">
+<fieldset data-form-navigation-target="section" data-type="PersonalInformation" class="section hidden h-full">
+  <h2 class="text-xl font-bold">Contact Information*</h2>
+  <p>Thanks for providing those details!</p>
+  <p>Complete the contact information below to immediately see your estimated profit and return figures for this property.</p>
+  <p>Check your email for a sample term sheet with additional loan information.</p>
+  <p>We are looking forward to working with you on this loan!</p>
+  
   <div class="my-5">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: "input-field" %>
+    <%= form.label :first_name, "First name *" %>
+    <%= form.text_field :first_name, class: "input-field underline-only", placeholder: "Jane" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: "input-field" %>
+    <%= form.label :last_name, "Last name *" %>
+    <%= form.text_field :last_name, class: "input-field underline-only", placeholder: "Smith" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "input-field", placeholder: "you@example.com" %>
+    <%= form.label :phone_number, "Phone number *" %>
+    <%= form.text_field :phone_number, class: "input-field underline-only", placeholder: "(224) 809-8619" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number, class: "input-field" %>
+    <%= form.label :email, "Email *" %>
+    <%= form.text_field :email, class: "input-field underline-only", placeholder: "name@example.com" %>
   </div>
+
+  <button type="button" data-action="click->form-navigation#back" class="bt-form-back">Back</button>
 
   <div class="inline">
-    <%= form.submit "Calculate Profits and Returns", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit "Calculate Profits and Returns", class: "bt-form-next" %>
   </div>
 
-  <button type="button" data-action="click->form-navigation#back" class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">Back</button>
 </fieldset>

@@ -2,7 +2,7 @@
 <%= form_with(model: real_estate, class: "contents") do |form| %> <!-- The 'real_estate' local variable is used as the form object -->
   <%= render partial: 'real_estates/error_explanation', locals: { real_estate: @real_estate } %>
   
-  <div data-controller="form-navigation">
+  <div data-controller="form-navigation" class="">
     <%= render partial: 'real_estates/address',locals: { form: form } %>
     <%= render partial: 'real_estates/loan_term',locals: { form: form } %>
     <%= render partial: 'real_estates/purchase_price',locals: { form: form } %>

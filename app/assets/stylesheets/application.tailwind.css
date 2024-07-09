@@ -4,7 +4,7 @@
 
 @layer components {
   .input-field { @apply 
-    block shadow rounded-md border border-green-400 outline-none
+    block border-green-400 outline-none
     px-3 py-2 mt-2 w-full
   }
 }
@@ -12,3 +12,71 @@
 .hidden {
   display: none;
 }
+
+.bt-form-next {
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding-block: 6px;
+  padding-inline: 14px;
+  min-height: 40px;
+  background-color: rgb(89, 103, 45);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+
+.bt-form-back {
+  font-family: inherit;
+  line-height: initial;
+  font-weight: 700;
+  outline: none;
+  border: 1px solid transparent;
+  margin: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+  padding-block: 6px;
+  padding-inline: 14px;
+  min-height: 40px;
+  background-color: rgb(211, 211, 211);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+
+.input-field.underline-only {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-bottom-color 0.3s, border-bottom-width 0.3s;
+}
+
+.input-field.underline-only:focus {
+  outline: none; 
+  border-bottom-color: #000;
+  border-bottom-width: 2px;
+  box-shadow: none;
+}
+
+/* Marquee */
+/* .marquee { overflow: hidden; }
+
+fieldset.marquee--inner {
+  position: relative;
+  animation-name: marquee;
+  animation-duration: 1.5s; 
+  animation-timing-function: steps(3s, end);
+  animation-fill-mode: forwards;
+}
+
+@keyframes marquee {
+  0% {
+    top: 15em
+  }
+  100% {
+    top: 0em
+  }
+} */

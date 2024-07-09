@@ -1,9 +1,10 @@
-<fieldset data-form-navigation-target="section" data-type="RepairBudget" class="section hidden">
+<fieldset data-form-navigation-target="section" data-type="RepairBudget" class="section hidden h-full">
   <div class="my-5">
-    <%= form.label :repair_budget %>
-    <%= form.number_field :repair_budget, class: "input-field" %>
+    <%= form.label :repair_budget, "Estimated Repair Budget*", class: "text-xl font-bold" %>
+    <p>Full budget expected to rehab the property.</p>
+    <%= form.number_field :repair_budget, class: "input-field underline-only", placeholder: "Type your answer here..." %>
   </div>
 
-  <button type="button" data-action="click->form-navigation#back">Back</button>
-  <button type="button" data-action="click->form-navigation#next">Next</button>
+  <button type="button" data-action="click->form-navigation#back" class="bt-form-back">Back</button>
+  <button type="button" data-action="click->form-navigation#next" class="bt-form-next">Next</button>
 </fieldset>

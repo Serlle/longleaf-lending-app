@@ -1,8 +1,9 @@
-<fieldset data-form-navigation-target="section" data-type="Address" class="section">
+<fieldset data-form-navigation-target="section" data-type="Address" class="section h-full ">
   <div class="my-5">
-    <%= form.label :address %>
-    <%= form.text_field :address, class: "input-field" %>
+    <%= form.label :address, "Target Property*", class: "text-xl font-bold" %>
+    <p>Address, City, State, & Zip for your target property</p>
+    <%= form.text_field :address, class: "input-field underline-only", placeholder: "Type your answer here..." %>
   </div>
   
-  <button type="button" data-action="click->form-navigation#next">Next</button>
+  <button type="button" data-action="click->form-navigation#next" class="bt-form-next">Next</button>
 </fieldset>
