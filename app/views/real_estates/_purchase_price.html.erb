@@ -3,7 +3,7 @@
     <%= form.label :purchase_price, "Purchase Price*", class: "text-xl font-bold" %>
     <p>What are you purchasing the property for? Please include any assignment fee.</p>
     <p>*Our sample term sheet will set a maximum loan-to-cost of 90%.</p>
-    <%= form.number_field :purchase_price, class: "input-field underline-only", placeholder: "Type your answer here..." %>
+    <%= form.number_field :purchase_price, class: "input-field underline-only bg-stone-200", placeholder: "Type your answer here..." %>
   </div>
 
   <button type="button" data-action="click->form-navigation#back" class="bt-form-back">Back</button>

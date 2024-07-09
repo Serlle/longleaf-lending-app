@@ -37,7 +37,7 @@ class RealEstatesController < ApplicationController
       if @real_estate.save
         # Send the email with Sidekiq
         SendTermsheetJob.perform_later(@real_estate)
-        format.turbo_stream { @notice = 'Real estate profit and return calculator was successfully created.' }
+        format.turbo_stream { @notice = 'The real estate profit and profitability calculation was successfully created.' }
         format.html { redirect_to loans_home_url }
         format.json { render :show, status: :created, location: @real_estate }
       else

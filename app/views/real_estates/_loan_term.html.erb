@@ -2,7 +2,7 @@
   <div class="my-5">
     <%= form.label :loan_term, "Loan Term*", class: "text-xl font-bold" %>
     <p>How many months do you want the loan for (up to 12)?</p>
-    <%= form.number_field :loan_term, class: "input-field underline-only", placeholder: "Type your answer here..." %>
+    <%= form.number_field :loan_term, class: "input-field underline-only bg-stone-200", placeholder: "Type your answer here..." %>
   </div>
 
   <button type="button" data-action="click->form-navigation#back" class="bt-form-back">Back</button>

@@ -1,5 +1,5 @@
-<fieldset data-form-navigation-target="section" data-type="PersonalInformation" class="section hidden h-full">
-  <h2 class="text-xl font-bold">Contact Information*</h2>
+<fieldset data-form-navigation-target="section" data-type="PersonalInformation" class="section hidden h-full content-scroll-personal-information">
+  <h2 class="text-xl font-bold text-black">Contact Information*</h2>
   <p>Thanks for providing those details!</p>
   <p>Complete the contact information below to immediately see your estimated profit and return figures for this property.</p>
   <p>Check your email for a sample term sheet with additional loan information.</p>
@@ -7,28 +7,29 @@
   
   <div class="my-5">
     <%= form.label :first_name, "First name *" %>
-    <%= form.text_field :first_name, class: "input-field underline-only", placeholder: "Jane" %>
+    <%= form.text_field :first_name, class: "input-field underline-only bg-stone-200", placeholder: "Jane" %>
   </div>
 
   <div class="my-5">
     <%= form.label :last_name, "Last name *" %>
-    <%= form.text_field :last_name, class: "input-field underline-only", placeholder: "Smith" %>
+    <%= form.text_field :last_name, class: "input-field underline-only bg-stone-200", placeholder: "Smith" %>
   </div>
 
   <div class="my-5">
     <%= form.label :phone_number, "Phone number *" %>
-    <%= form.text_field :phone_number, class: "input-field underline-only", placeholder: "(224) 809-8619" %>
+    <%= form.text_field :phone_number, class: "input-field underline-only bg-stone-200", placeholder: "(224) 809-8619" %>
   </div>
 
   <div class="my-5">
     <%= form.label :email, "Email *" %>
-    <%= form.text_field :email, class: "input-field underline-only", placeholder: "name@example.com" %>
+    <%= form.text_field :email, class: "input-field underline-only bg-stone-200", placeholder: "name@example.com" %>
   </div>
 
-  <button type="button" data-action="click->form-navigation#back" class="bt-form-back">Back</button>
-
-  <div class="inline">
-    <%= form.submit "Calculate Profits and Returns", class: "bt-form-next" %>
+  <div class="relative flex justify-between items-center">
+    <div class="flex space-x-2">
+      <button type="button" data-action="click->form-navigation#back" class="bt-form-back">Back</button>
+      <%= form.submit "Calculate Profits and Returns", class: "bt-form-next" %>
+    </div>
+    <%= link_to "Empty All Fields", loans_home_path, class: "bt-form-clear flex-initial inline-flex items-center" %> 
   </div>
-
 </fieldset>

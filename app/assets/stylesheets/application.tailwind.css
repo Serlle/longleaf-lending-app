@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
 @layer components {
   .input-field { @apply 
-    block border-green-400 outline-none
+    block border-green-400 outline-none 
     px-3 py-2 mt-2 w-full
   }
 }
@@ -13,13 +18,13 @@
   display: none;
 }
 
-.bt-form-next {
+.bt-form-next, .bt-form-clear {
   font-family: inherit;
   line-height: initial;
   font-weight: 700;
   outline: none;
   border: 1px solid transparent;
-  margin: 0px;
+  margin: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
   padding-block: 6px;
   padding-inline: 14px;
@@ -27,6 +32,7 @@
   background-color: rgb(89, 103, 45);
   color: rgb(255, 255, 255);
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .bt-form-back {
@@ -35,14 +41,15 @@
   font-weight: 700;
   outline: none;
   border: 1px solid transparent;
-  margin: 0px;
+  margin: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
   padding-block: 6px;
   padding-inline: 14px;
   min-height: 40px;
-  background-color: rgb(211, 211, 211);
+  background-color: rgb(182, 182, 182);
   color: rgb(255, 255, 255);
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .input-field.underline-only {
@@ -61,22 +68,17 @@
   box-shadow: none;
 }
 
-/* Marquee */
-/* .marquee { overflow: hidden; }
-
-fieldset.marquee--inner {
-  position: relative;
-  animation-name: marquee;
-  animation-duration: 1.5s; 
-  animation-timing-function: steps(3s, end);
-  animation-fill-mode: forwards;
+.content-scroll-personal-information {
+  width: 100%; 
+  height: 400px; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+  padding-top: 1.5rem;
 }
 
-@keyframes marquee {
-  0% {
-    top: 15em
-  }
-  100% {
-    top: 0em
-  }
-} */
+.content-scroll-errors-message {
+  width: 100%; 
+  height: 100px; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
