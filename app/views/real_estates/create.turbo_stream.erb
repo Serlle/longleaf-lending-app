@@ -1,7 +1,9 @@
+<%# Turbo Stream to update the 'notice' element on the page with a new notice message %>
 <%= turbo_stream.replace 'notice' do %>
   <%= render partial: 'loans/notice', locals: { notice: @notice }%>
 <% end %>
 
+<%# Turbo Stream to update the 'error_explanation' element on the page with error messages %>
 <%= turbo_stream.replace 'error_explanation' do %>
   <%= render partial: 'real_estates/error_explanation', locals: { real_estate: @real_estate }%>
 <% end %>

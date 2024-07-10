@@ -13,9 +13,8 @@ class RealEstatesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        # I included a corresponding view template
         render pdf: "Termsheet - #{@real_estate.first_name + @real_estate.last_name}", 
-               template: 'real_estates/termsheet'
+               template: 'real_estates/termsheet' # I included a corresponding view template
       end
     end
   end
@@ -32,18 +31,17 @@ class RealEstatesController < ApplicationController
   # POST /real_estates or /real_estates.json
   def create
     @real_estate = RealEstate.new(real_estate_params)
-    @real_estate.loan_amount = @real_estate.calculate_loan_amount
-    @real_estate.profit = @real_estate.calculate_estimated_profit
+    @real_estate.loan_amount = @real_estate.calculate_loan_amount # Did the calculation of loan amount with the real estate params
+    @real_estate.profit = @real_estate.calculate_estimated_profit # Did the calculation of profit with the real estate params
 
     respond_to do |format|
-      if @real_estate.save
-        # Send the email with Sidekiq
-        SendTermsheetJob.perform_later(@real_estate)
-        format.turbo_stream { @notice = 'The real estate profit and profitability calculation was successfully created.' }
+      if @real_estate.save 
+        SendTermsheetJob.perform_later(@real_estate) # Queue the email with Sidekiq
+        format.turbo_stream { @notice = 'The real estate profit and profitability calculation was successfully created.' } # Put notice in real-time with turbo
         format.html { redirect_to loans_home_url }
         format.json { render :show, status: :created, location: @real_estate }
       else
-        format.turbo_stream { @real_estate = @real_estate }
+        format.turbo_stream { @real_estate = @real_estate } # Set error_explanation in real-time with turbo
         format.html { render 'loans/home', status: :unprocessable_entity }
         format.json { render json: @real_estate.errors, status: :unprocessable_entity }
       end
@@ -54,9 +52,9 @@ class RealEstatesController < ApplicationController
   def update
     respond_to do |format|
       if @real_estate.update(real_estate_params)
-        @real_estate.loan_amount = @real_estate.calculate_loan_amount
-        @real_estate.profit = @real_estate.calculate_estimated_profit
-        @real_estate.save
+        @real_estate.loan_amount = @real_estate.calculate_loan_amount # Calculated loan amoun again with update params
+        @real_estate.profit = @real_estate.calculate_estimated_profit # Calculated profit again with update params
+        @real_estate.save # Save the new changes
         format.html { redirect_to real_estate_url(@real_estate), notice: "Real estate profit was successfully updated." }
         format.json { render :show, status: :ok, location: @real_estate }
       else
