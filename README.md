@@ -1,48 +1,70 @@
-# Longleaf Lending Lead Generation Form and Profit Calculator
+# Yacht Warriors Fullstack Developer Application
 
-## Project Overview
+This project was created by Serlle Rosales as part of the application process for the Fullstack Developer position at Yacht Warriors, managed by Matt Weldent.
 
-This project involves developing an in-house lead generation form and profit calculator for Longleaf Lending, replacing current third-party solutions. The application will collect user information, calculate potential profits, generate a termsheet PDF, and email it to users.
+## Environment
 
-## Features
+- **Ruby Version**: 3.0.3
+- **Rails Version**: 7.0.4
+- **Database**: PostgreSQL
+- **Testing Framework**: Minitest
 
-- **Form Creation**: Collects user inputs including address, loan term, purchase price, repair budget, ARV, name, email, and phone.
-- **Logic Implementation**: Calculates estimated profit with constraints:
-  - Loan amount funds up to 90% of the purchase price.
-  - Loan amount cannot exceed 70% of ARV.
-  - Profit is calculated as ARV minus total loan value and interest expense, with interest compounded monthly at 13% annually.
-- **PDF Generation**: Produces a termsheet PDF with input details, calculated loan amount, and estimated profit.
-- **Email Integration**: Sends the PDF to the user upon form submission using the `letter_opener` gem in development.
+## Installation
 
-## Tech Stack
+To install Ruby 3.0.3 and Rails 7.0.4 using a version manager (e.g., rbenv):
 
-- **Backend**: Ruby on Rails
-- **Styling**: Tailwind CSS
-- **PDF Generation**: Prawn/Wicked PDF
-- **Background Jobs**: Sidekiq
-- **Email Handling**: `letter_opener` gem
+```bash
+rbenv install 3.0.3
+rbenv global 3.0.3
+gem install rails -v 7.0.4
+```
 
-## Setup Instructions
+Make sure PostgreSQL is installed and configured.
 
-1. Clone the repository.
-2. Install dependencies with `bundle install`.
-3. Set up the database with `rails db:migrate`.
-4. Run the application with `rails server`.
-5. Use `letter_opener` for email previews during development.
+## Running the Application
 
-## Thought Process and Design Decisions
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:Serlle/longleaf-lending-app.git
+   cd longleaf-lending-app
+   ```
 
-- **Security**: Implement validations and secure data handling.
-- **Scalability**: Use background jobs for email processing to improve performance.
-- **User Experience**: Design a simple and intuitive form using Tailwind CSS.
+2. Install dependencies:
+   ```bash
+   bundle install
+   ```
 
-## Evaluation Criteria
+3. Set up the database:
+   ```bash
+   rails db:setup
+   ```
 
-- Code quality and organization.
-- Accurate implementation of form logic and calculations.
-- Effective PDF generation and email integration.
-- User-friendly design.
+4. Start the Rails server:
+   ```bash
+   rails server
+   ```
 
-## Conclusion
+5. Start Sidekiq for background job processing:
+   ```bash
+   bundle exec sidekiq
+   ```
 
-This project demonstrates essential skills in building a full-stack application with Ruby on Rails, focusing on user experience, security, and scalability.
+6. Access the application at `http://localhost:3000`.
+
+## Running Tests
+
+You can run tests using the following command:
+```bash
+bin/rails test
+```
+
+## Seed Data
+
+The seed data includes one sample `RealEstate` entry, which you can view in detail at `/real_estates/:id`. You can also download its PDF version at `/real_estates/:id.pdf`. Alternatively, you can create your own `RealEstate` entry by filling out the form on the homepage.
+
+## Sending Emails
+
+To simulate sending emails, ensure Sidekiq is running (`bundle exec sidekiq`). Emails can be previewed using Letter Opener after creating a `RealEstate`.
+
+## Contact
+For any questions or inquiries, please contact Serlle Rosales - serlle.rosales96@gmail.com
