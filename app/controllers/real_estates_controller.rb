@@ -1,5 +1,7 @@
 class RealEstatesController < ApplicationController
   before_action :set_real_estate, only: %i[ show edit update destroy ]
+  before_action :authorize_user, except: %i[ show create ]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_real_estate
 
   # GET /real_estates or /real_estates.json
   def index
@@ -83,5 +85,18 @@ class RealEstatesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def real_estate_params
       params.require(:real_estate).permit(:address, :loan_term, :purchase_price, :repair_budget, :arv, :first_name, :last_name, :phone_number, :email)
+    end
+
+    # Authorize user for restricted actions
+    def authorize_user
+      unless action_name.in?(%w[show create])
+        redirect_to loans_home_url, alert: 'Access restricted.'
+      end
+    end
+    
+    # Invalid real estate if real estate doesn't exist
+    def invalid_real_estate
+      logger.error "Attempt to access invalid raeal estate #{params[:id]}"
+      redirect_to loans_home_url, alert: 'Invalid real estate'
     end
 end

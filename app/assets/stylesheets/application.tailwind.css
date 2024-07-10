@@ -33,6 +33,7 @@ body, html {
   color: rgb(255, 255, 255);
   border-radius: 4px;
   cursor: pointer;
+  align-items: center;
 }
 
 .bt-form-back {
@@ -50,6 +51,7 @@ body, html {
   color: rgb(255, 255, 255);
   border-radius: 4px;
   cursor: pointer;
+  align-items: center;
 }
 
 .input-field.underline-only {

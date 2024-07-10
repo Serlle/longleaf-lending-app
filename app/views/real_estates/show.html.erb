@@ -3,14 +3,15 @@
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
-    <h1 class="font-bold text-4xl">Real Estate Profit and Return of <%= @real_estate.first_name + @real_estate.last_name %></h1>
 
-    <%= render @real_estate %>
+    <div class="content bg-white p-6 rounded-lg shadow-lg">
+      <h1 class="font-bold text-4xl mb-5">Real Estate Profit and Return of <%= @real_estate.first_name %> <%= @real_estate.last_name %></h1>
+      <%= render @real_estate %>
 
-    <%= link_to "Edit this real estate", edit_real_estate_path(@real_estate), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to real estates", real_estates_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this real estate", @real_estate, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <div class="flex space-x-2 mt-5 item-center">
+        <%= link_to "Back to Home Page", loans_home_path, class: "flex bt-form-back" %>
+        <%= link_to "Download PDF", real_estate_path(@real_estate, format: :pdf), class: "flex bt-form-next" %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,56 +1,46 @@
-<div id="<%= dom_id real_estate %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Address:</strong>
-    <%= real_estate.address %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Loan term:</strong>
-    <%= real_estate.loan_term %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Purchase price:</strong>
-    <%= real_estate.purchase_price %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Repair budget:</strong>
-    <%= real_estate.repair_budget %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Arv:</strong>
-    <%= real_estate.arv %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">First name:</strong>
-    <%= real_estate.first_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Last name:</strong>
-    <%= real_estate.last_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Phone number:</strong>
-    <%= real_estate.phone_number %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
-    <%= real_estate.email %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">PROFIT:</strong>
-    <%= real_estate.profit %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">LOAN AMOUNT:</strong>
-    <%= real_estate.loan_amount %>
-  </p>
+<div id="<%= dom_id @real_estate %>" class="space-y-5">
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Address:</strong>
+    <p class="text-gray-700"><%= @real_estate.address %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Loan term:</strong>
+    <p class="text-gray-700"><%= @real_estate.loan_term %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Purchase price:</strong>
+    <p class="text-gray-700"><%= @real_estate.purchase_price %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Repair budget:</strong>
+    <p class="text-gray-700"><%= @real_estate.repair_budget %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Arv:</strong>
+    <p class="text-gray-700"><%= @real_estate.arv %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">First name:</strong>
+    <p class="text-gray-700"><%= @real_estate.first_name %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Last name:</strong>
+    <p class="text-gray-700"><%= @real_estate.last_name %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Phone number:</strong>
+    <p class="text-gray-700"><%= @real_estate.phone_number %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Email:</strong>
+    <p class="text-gray-700"><%= @real_estate.email %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Profit:</strong>
+    <p class="text-gray-700"><%= @real_estate.profit %></p>
+  </div>
+  <div class="my-5">
+    <strong class="block font-bold mb-1">Loan Amount:</strong>
+    <p class="text-gray-700"><%= @real_estate.loan_amount %></p>
+  </div>
 </div>
