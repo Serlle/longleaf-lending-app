@@ -1,9 +1,20 @@
-<div class="w-full">
-  <h1 class="font-bold text-4xl">Loans#home_page</h1>
-  <p>Find me in app/views/loans/home.html.erb</p>
+<div id="home-page" class="w-full">
+  <div class="container bg-wrap">
+    <div class="content-loans py-[9rem]">
+      <%= render 'loans_content' %>
+    </div>
+  </div>
 
-  <h2 class="font-bold">Real Estate Profit and Return Calculator</h2>
-  <%= render 'loans/notice' %>
-  <!-- Render the real_estate partial and pass the @real_estate instance variable as a local variable -->
-  <%= render partial: 'loans/real_estate', locals: { real_estate: @real_estate } %>
+  <div class="py-20 pb-12 bg-white">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">Real Estate Profit and Return Calculator</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Start here with our 30 second form.</p>
+    </div>
+  </div>
+ 
+  <div class="container">
+    <%= render 'loans/notice' %>
+    <!-- Render the real_estate partial and pass the @real_estate instance variable as a local variable -->
+    <%= render partial: 'loans/real_estate', locals: { real_estate: @real_estate } %>
+  </div>
 </div>

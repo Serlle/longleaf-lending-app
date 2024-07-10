@@ -25,11 +25,11 @@
     <%= form.text_field :email, class: "input-field underline-only bg-stone-200", placeholder: "name@example.com" %>
   </div>
 
-  <div class="relative flex justify-between items-center">
-    <div class="flex space-x-2">
-      <button type="button" data-action="click->form-navigation#back" class="bt-form-back">Back</button>
-      <%= form.submit "Calculate Profits and Returns", class: "bt-form-next" %>
+  <div class="mx-auto relative flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0 sm:space-x-2">
+    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+      <button type="button" data-action="click->form-navigation#back" class="bt-form-back w-full sm:w-auto">Back</button>
+      <%= form.submit "Calculate Profits and Returns", class: "bt-form-next w-full sm:w-auto" %>
     </div>
-    <%= link_to "Empty All Fields", loans_home_path, class: "bt-form-clear flex-initial inline-flex items-center" %> 
+    <%= link_to "Empty All Fields", loans_home_path, class: "bt-form-clear w-full sm:w-auto flex-initial inline-flex items-center" %> 
   </div>
 </fieldset>
